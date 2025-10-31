@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kuis - EcoLearn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {font-family:'Poppins', sans-serif; background:#eafaf1; color:#186a3b; padding:20px; margin:0;}
+  header{background:#1e8449;color:white;padding:12px;text-align:center;}
+  .card{max-width:800px;margin:20px auto;background:white;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+  .q{margin-bottom:12px;}
+  input[type="text"]{width:100%; padding:8px; margin-top:6px; border-radius:6px; border:1px solid #c8e6cf;}
+  button{padding:10px 18px; background:#58d68d; color:white; border:none; border-radius:8px; cursor:pointer;}
+  button:hover{background:#28b463;}
+  #hasil{margin-top:14px; font-weight:600;}
+  a.back{display:inline-block;margin-top:10px;color:#1e8449;text-decoration:none;}
+</style>
+</head>
+<body>
+  <header><h2>❓ Kuis EcoLearn</h2></header>
+  <div class="card">
+    <div id="kuis"></div>
+    <button onclick="cekJawaban()">Kirim Jawaban</button>
+    <div id="hasil"></div>
+    <a class="back" href="index.html">⬅️ Kembali</a>
+  </div>
+
+<script>
+const pertanyaan = [
+  {q: "Apa itu daur ulang?", a: "mengubah barang bekas"},
+  {q: "Energi surya termasuk energi apa?", a: "terbarukan"},
+  {q: "Polusi udara sering disebabkan oleh?", a: "asap kendaraan"},
+  {q: "Sampah organik bisa dijadikan?", a: "kompos"},
+  {q: "Menanam pohon dapat membantu?", a: "mengurangi polusi"}
+];
+
+const kuisDiv = document.getElementById('kuis');
+pertanyaan.forEach((p, i) => {
+  kuisDiv.innerHTML += `<div class="q"><label>${i+1}. ${p.q}</label><input id='j${i}' placeholder='Jawaban kamu...'></div>`;
+});
+
+function cekJawaban() {
+  let skor = 0;
+  pertanyaan.forEach((p, i) => {
+    const j = document.getElementById('j'+i).value.toLowerCase().trim();
+    if (j.includes(p.a)) skor++;
+  });
+  document.getElementById('hasil').innerText = "Skor kamu: " + skor + " / " + pertanyaan.length;
+}
+</script>
+</body>
+</html>

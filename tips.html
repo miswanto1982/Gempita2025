@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tips Hijau - EcoLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {font-family:'Poppins', sans-serif; background:#d5f5e3; color:#0b5345; padding:20px; margin:0;}
+    header{background:#1e8449;color:white;padding:12px;text-align:center;}
+    .card{max-width:800px;margin:20px auto;background:white;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06); text-align:center;}
+    button{background:#58d68d; color:white; padding:10px 18px; border:none; border-radius:10px; cursor:pointer;}
+    p#tip{font-weight:600; margin-top:16px;}
+    a.back{display:inline-block;margin-top:10px;color:#1e8449;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <header><h2>💡 Tips Ramah Lingkungan</h2></header>
+  <div class="card">
+    <p id="tip">Klik tombol di bawah untuk dapatkan tips!</p>
+    <button onclick="tampilkan()">Tampilkan Tips</button>
+    <div style="margin-top:18px;">
+      <a class="back" href="index.html">⬅️ Kembali</a>
+    </div>
+  </div>
+
+<script>
+const tips = [
+  "Gunakan botol minum isi ulang.",
+  "Matikan lampu saat tidak digunakan.",
+  "Tanam pohon di sekitar rumah.",
+  "Kurangi penggunaan plastik.",
+  "Gunakan sepeda atau jalan kaki untuk jarak dekat."
+];
+function tampilkan(){
+  document.getElementById("tip").innerText = tips[Math.floor(Math.random()*tips.length)];
+}
+</script>
+</body>
+</html>

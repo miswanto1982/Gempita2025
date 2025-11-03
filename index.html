@@ -4,34 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoLearn - Edukasi Lingkungan</title>
+
+  <!-- 🌿 Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {font-family: 'Poppins', sans-serif; text-align: center; background: #e9f7ef; color: #2c5e1a; margin:0; padding:0;}
-    header {background: linear-gradient(90deg,#58d68d,#1e8449); color:white; padding:20px 10px;}
-    main {padding:30px;}
-    h1 {margin:0; font-size:32px;}
-    .menu {margin-top: 30px;}
-    a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      min-width:160px;
-      background: #58d68d;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.25s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    /* 🌿 Gaya Umum */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #e9f7ef, #d4efdf);
+      color: #145a32;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
     }
-    a:hover {background: #28b463; transform: translateY(-2px);}
-    footer {text-align:center; padding:12px; font-size:13px; color:#1e8449;}
-    @media(max-width:600px){ h1{font-size:24px;} a{display:block; width:80%; margin:8px auto;} }
+
+    /* 🌿 Header */
+    header {
+      background: linear-gradient(90deg, #27ae60, #1e8449);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 8px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* 🌿 Menu Utama */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 20px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #58d68d, #28b463);
+      padding: 18px 30px;
+      border-radius: 15px;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .menu a:hover {
+      background: linear-gradient(135deg, #45b36b, #239b56);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* 🌿 Footer */
+    footer {
+      background: #1e8449;
+      color: #d5f5e3;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+
+    /* 🌿 Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🌿 Responsif untuk HP */
+    @media (max-width: 600px) {
+      header h1 { font-size: 28px; }
+      header p { font-size: 15px; }
+      .menu a { font-size: 16px; width: 80%; padding: 15px 0; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- 🌱 Header -->
   <header>
-    <h1>🌱 EcoLearn</h1>
+    <h1>🌿 EcoLearn</h1>
     <p>Aplikasi Edukasi Lingkungan Interaktif</p>
   </header>
+
+  <!-- 📚 Menu -->
   <main>
     <div class="menu">
       <a href="materi.html">📘 Materi</a>
@@ -40,8 +124,11 @@
       <a href="tentang.html">👨‍🏫 Tentang</a>
     </div>
   </main>
+
+  <!-- 🪴 Footer -->
   <footer>
-    Dikembangkan oleh Tim EcoLearn – SMK Negeri 1 Sudimoro (Miswanto, S.Kom) • 2025
+    <p>🌱 Dikembangkan oleh <strong>Tim EcoLearn</strong> — SMK Negeri 1 Sudimoro (Miswanto, S.Kom) • 2025</p>
   </footer>
+
 </body>
 </html>
